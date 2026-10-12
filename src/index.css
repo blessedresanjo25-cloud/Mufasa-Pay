@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: #07090e;
+    color: #e2e8f0;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Biometric scan pulse animation */
+@keyframes biometric-scan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-biometric-scan {
+  animation: biometric-scan 2.4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.2deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gold-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fef08a 0%, #fbbf24 40%, #d4af37 70%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+}
+
+.card-luxury {
+  background: radial-gradient(120% 120% at 50% 0%, rgba(30, 41, 59, 0.5) 0%, rgba(13, 17, 27, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.card-luxury:hover {
+  border-color: rgba(212, 175, 55, 0.22);
+}

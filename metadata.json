@@ -1,0 +1,8 @@
+{
+  "name": "Mufasa Pay",
+  "description": "Elite financial intelligence, real-time analytics, biometric authentication, and third-party payment gateway orchestration with a luxury dark mode and gold aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
