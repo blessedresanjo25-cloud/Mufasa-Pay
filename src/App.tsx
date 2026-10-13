@@ -312,7 +312,6 @@ export default function App() {
     <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans">
       <AnimatePresence mode="wait">
         {!isAuthenticated ? (
-          // 3. Tree 1: NOT authenticated -> render ONLY AuthScreen (standalone full-screen)
           <motion.div
             key="auth-screen"
             initial={{ opacity: 0 }}
@@ -324,7 +323,6 @@ export default function App() {
             <LoginPageView onLoginSuccess={handleLoginSuccess} />
           </motion.div>
         ) : (
-          // 3. Tree 2: Authenticated -> render existing app shell with 400ms fade/scale-in transition
           <motion.div
             key="app-shell"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -332,27 +330,6 @@ export default function App() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="flex-1 flex flex-col min-h-screen"
           >
-            {/* Top Banner Hero Header */}
-            <div className="relative overflow-hidden border-b border-slate-800/80 bg-gradient-to-b from-[#0a0f1c] via-[#070a14] to-[#07090e] px-4 md:px-8 py-8 md:py-10 text-center">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -top-10 left-1/3 w-64 h-32 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="relative z-10 max-w-4xl mx-auto">
-                <div className="flex items-center justify-between text-[11px] font-semibold tracking-widest text-slate-400 uppercase mb-3">
-                  <span className="text-cyan-400">Smarter Finance · Brighter Tomorrow</span>
-                  <span className="hidden sm:inline text-slate-500">Plan · Analyze · Grow</span>
-                </div>
-
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2">
-                  Finance <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">Dashboard</span>
-                </h1>
-
-                <p className="text-sm md:text-base text-slate-400 max-w-xl mx-auto font-normal">
-                  Track cash flow, budgets, profit, and portfolio performance with Mufasa Pay.
-                </p>
-              </div>
-            </div>
-
             {/* Main App Container */}
             <div className="flex-1 flex max-w-[1720px] w-full mx-auto">
               <Sidebar

@@ -92,13 +92,14 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[450px] h-[250px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
 
+      {/* Floating Login Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-md overflow-hidden rounded-3xl border border-amber-500/35 bg-[#0b0f1a] p-8 text-slate-100 shadow-2xl z-10"
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="relative w-full max-w-md overflow-hidden rounded-3xl border border-amber-500/40 bg-[#0b0f1a] p-8 text-slate-100 shadow-2xl z-10 animate-float"
         style={{
-          boxShadow: '0 30px 90px -20px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+          boxShadow: '0 30px 90px -20px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
         }}
       >
         {/* Header */}
